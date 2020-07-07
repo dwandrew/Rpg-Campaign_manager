@@ -1,0 +1,20 @@
+<% @posts.each do |post| %>
+<% #binding.pry %>
+<% if current_user.storyteller == false && post.player_access == false %>
+<%= "----------- Post hidden by storyteller ----------" %> <br>
+<%else%>
+        <%= "Author: #{post.user.username} "%> <br>
+        <%= "Title: #{post.title} "%> <br>
+        <%= "Content: #{post.content}"%> <br>
+        <a href= <%= "/post/#{post.id}" %>>"View/Edit post"</a><br>       
+        <%= "------------------------------------ "%><br>
+        <% end %>
+<% end %>
+
+<footer>
+<a href = '/'> Home </a>
+<a href = '/posts'> View Posts </a>
+<a href = '/posts/new'> New Post </a>
+<a href= '/logout'> Logout </a> 
+   </footer>
+

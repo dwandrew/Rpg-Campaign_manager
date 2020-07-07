@@ -1,0 +1,26 @@
+Title: <%= @post.title %><br>
+Author: <%= @post.user.username %><br>
+Contents: <%= @post.content %><br>
+
+<p>
+<form method="get" action = '/post/<%= @post.id %>/edit'>
+<input type="submit" value="Edit Post">
+</form>
+</p>
+<p>
+<form method="post" action="/post/<%= @post.id %>">
+  <input type="hidden" name="_method" value="delete" >
+  <input type="submit" value="Delete Post">
+</form>
+
+
+
+
+
+
+<footer>
+<a href = '/'> Home </a>
+<a href = '/posts'> View Posts </a>
+<a href = '/posts/new'> New Post </a>
+<a href= '/logout'> Logout </a> 
+   </footer>
